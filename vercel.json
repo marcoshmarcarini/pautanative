@@ -1,9 +1,4 @@
 {
-    "buildCommand": [
-      {
-        "src": "/",
-        "use": "@vercel/static-build",
-        "config": { "outputDirectory": "/build" }
-      }
-    ]
-  }
+    "buildCommand": "next build",
+    "outputDirectory": "build"
+}
