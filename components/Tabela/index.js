@@ -148,7 +148,7 @@ export default function Tabela() {
     const intervalTable = setInterval(() => {
       fetchData()
       mediaQuery()
-    }, 60000)
+    }, 30000)
 
     return () => clearInterval(intervalTable)
   }, [])

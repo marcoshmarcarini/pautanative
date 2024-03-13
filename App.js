@@ -17,9 +17,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    maxWidth: '1920px',
+    width: '100%',
+    gap:'25px'
   },
 });
