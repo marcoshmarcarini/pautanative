@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react"
 import { db } from '../../utils/firestore'
-import { arrayUnion, collection, doc, deleteDoc, getDoc, getDocs, orderBy, query, updateDoc, where, setDoc } from 'firebase/firestore'
-//import img from 'next/img'
-import useSWR, { mutate } from 'swr'
+import { collection, getDocs, orderBy, query, where} from 'firebase/firestore'
 import { StyleSheet } from 'react-native'
 
-
-
-
-const fetcher = async (url) => {
-  const response = await fetch(url)
-  return response.json()
-}
 
 const styles = StyleSheet.create({
   tabelaContent: {
@@ -34,7 +25,7 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#ffffff',
     textAlign: 'center',
-    margin: 0
+    margin: '0'
   },
   cardItem: {
     display: 'flex',
@@ -43,7 +34,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     rowGap: '5px',
     color: '#2d2d2d',
-    padding: '0 10px',
+    paddingTop: '0',
+    paddingBottom: '0',
+    paddingLeft: '10px',
+    paddingRight: '10px',
     fontWeight: '700',
     fontSize: '1rem'
   },
@@ -54,8 +48,6 @@ const styles = StyleSheet.create({
 })
 
 export default function Tabela() {
-  /* Não é necessário fazer uma tabela e sim um card. */
-  const { data: jobsData, mutate } = useSWR('/api/jobs', fetcher)
   const [jobs = jobsData, setJobs] = useState({
     bruno: [], dani: [], juninho: [],
     leandro: [], luiz: [], rafaela: [],
@@ -137,9 +129,6 @@ export default function Tabela() {
       renan: renanData, rodolfo: rodolfoData, thiago: thiagoData,
       victoria: victoriaData,
     })
-
-    mutate()
-
   }
 
   useEffect(() => {

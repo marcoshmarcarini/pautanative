@@ -4,7 +4,10 @@ import { StyleSheet } from "react-native"
 
 const style = StyleSheet.create({
     titulo: {
-        margin: '10px auto -50px auto',
+        marginTop: '10px',
+        marginBottom: '50px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         fontSize: '1.25rem',
         fontWeight: '700',
         textAlign: 'center'
